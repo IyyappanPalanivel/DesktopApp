@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import LoginScreen from './src/LoginScreen'
-import Root from './src/Root'
+import Root from './src/Root.js'
 import { NavigationContainer } from '@react-navigation/native';
 
 const App = () => {
