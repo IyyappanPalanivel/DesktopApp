@@ -4,6 +4,8 @@ import { SafeAreaView } from 'react-native-windows'
 import Logo from '../src/asset/logo.png'
 import { useNavigation } from '@react-navigation/native'
 import AsyncStorage from '@react-native-async-storage/async-storage';
+// import Realm from 'realm'
+// import { CERT_TABLE_PATH, UserTableSchema } from './LocalDB/AllSchema'
 
 const LoginScreen = () => {
     const navigation = useNavigation();
@@ -14,6 +16,7 @@ const LoginScreen = () => {
         try {
           const jsonValue = JSON.stringify(data)
           await AsyncStorage.setItem('@value', jsonValue)
+          navigation.navigate('HomeScreen');
         } catch (e) {
          console.log('e', e)
         }
@@ -36,10 +39,29 @@ const LoginScreen = () => {
                 mobileNumber:mobileNumber,
                 password:password
             }
-            await storeData(data)
-            navigation.navigate('HomeScreen')
+            await storeData(data);
+            // storeToRealmDb(mobileNumber,password);
+
         }
     }
+
+    // const storeToRealmDb = async (mobile,pass) =>{
+    //     const realm =await Realm.open({
+    //         path:CERT_TABLE_PATH,
+    //         schema:[UserTableSchema]
+    //     })
+
+    //     let task;
+    //     realm.write(()=>{
+    //         task=realm.create('Users',{
+    //             _id: 1,
+    //             mobile_number:mobile,
+    //             password: pass,
+    //         })
+    //     })
+    //     Alert.alert('Data stored sucessfully')
+    //     navigation.navigate('HomeScreen')
+    // }
 
     return (
         <SafeAreaView>

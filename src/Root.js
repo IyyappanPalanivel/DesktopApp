@@ -22,7 +22,7 @@ const Root = () => {
     )
 }
 
-export default Root
+export default Root;
 // const Stack = createNativeStackNavigator();
     // return (
     //     <NavigationContainer independent={true}>
