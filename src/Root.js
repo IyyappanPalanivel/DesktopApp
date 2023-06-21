@@ -12,21 +12,14 @@ const Root = () => {
             <Stack.Navigator initialRouteName='LoginScreen'>
                 <Stack.Screen name='LoginScreen'
                     component={LoginScreen}
-                    options={{ headerStyle: false }}/>
+                    options={{ headerShown: false }}/>
 
                     <Stack.Screen name='HomeScreen'
                         component={HomeScreen}
-                        options={{ headerStyle: false }}/>
+                        options={{ headerShown: false }}/>
             </Stack.Navigator>
        
     )
 }
 
 export default Root;
-// const Stack = createNativeStackNavigator();
-    // return (
-    //     <NavigationContainer independent={true}>
-    //         <Stack.Navigator initialRouteName='SplashScreen'>
-    //             <Stack.Screen name='SplashScreen'
-    //                 component={SplashScreen}
-    //                 options={{ headerShown: false }} />
